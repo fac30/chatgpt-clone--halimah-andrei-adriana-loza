@@ -1,1 +1,3 @@
-CONST APIKEY = "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"
+# local env files
+.env.local
+.env.*.local
