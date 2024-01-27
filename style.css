@@ -49,12 +49,11 @@ form {
 }
 
 .center {
-	max-width: 40rem;
 	margin-left: auto;
 	margin-right: auto;
 	}
 
-	.width-lg {
+.width-lg {
 		max-width: 60rem;
 		}	
 
