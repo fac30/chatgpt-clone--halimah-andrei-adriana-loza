@@ -7,11 +7,15 @@ form.addEventListener('submit', (event) => {
     const chatInput = formData.get('chat-input');
     const chatOutput = document.getElementById('chat-output');
 
+    const outputParagraph = document.createElement('p');
+
+
     chatOutput.textContent = chatInput;
 
     const apiKey = formData.get('password');
     console.log(apiKey);
     form.reset(); // Clears form data so new entries can be made
+
 
     fetch(`https://api.openai.com/v1/chat/completions`, {
         method: 'POST',
@@ -25,9 +29,16 @@ form.addEventListener('submit', (event) => {
             'Authorization': `Bearer ${apiKey}`,
         }
     })
+    
         .then((response) => {
             console.log(response)
             if(!response.ok) throw new Error(response.status)
             return response.json();
         })
+
+        .then((response) => {
+            outputParagraph.textContent = JSON.stringify(response.choices[0]?.message?.content);
+            chatOutput.appendChild(outputParagraph);
+
+        });
 })
