@@ -11,8 +11,10 @@ form.addEventListener('submit', (event) => {
 
     // const apiUrl = `https://api.openai.com/v1/chat/completions/`
 
-    const apiKey = process.env.APIKEY
-  
+    // const apiKey = process.env.APIKEY;
+    const apiKey = formData.get('pass');
+    const pass = document.getElementById('pass');
+    form.reset();
 
     fetch(`https://api.openai.com/v1/chat/completions/`, {
         method: 'POST',
