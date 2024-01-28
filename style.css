@@ -9,6 +9,7 @@
 	box-sizing: border-box;
 	list-style: none;
 	text-decoration: none;
+	font-family: var(--font-family);
 }
 
 /* HTML5 display-role reset for older browsers */
@@ -22,7 +23,9 @@ header,
 hgroup,
 menu,
 nav,
-section {
+section,
+label,
+input {
 	display: block;
 }
 
@@ -39,21 +42,83 @@ q:after {
 	content: none;
 }
 
-table {
-	border-collapse: collapse;
-	border-spacing: 0;
+/* Utility classes and variables */
+
+:root {
+	--clr-neutral-100: #F2F4F3;
+	--clr-neutral-800: #0D0106;
+	--clr-accent-300: #0596C7; /* Lighter version of accent colour */
+	--clr-accent-400: #035E7B;
+
+	--font-family: system-ui, sans-serif;
+
+	--fs-regular: 1rem;
+	--fs-large: 1.5rem;
 }
 
-form {
-	width: 50%;
+.flex-col {
+	display: flex;
+	flex-direction: column;
 }
 
 .center {
+	max-width: 40rem;
 	margin-left: auto;
 	margin-right: auto;
-	}
+}
+
+.center-text {
+	text-align: center;
+}
 
 .width-lg {
-		max-width: 60rem;
-		}	
+	max-width: 60rem;
+}	
 
+.gap-sm {
+	gap: 1rem;
+}
+
+.padding-sm {
+	padding: 0.5rem;
+}
+
+.stack-sm > * + * {
+	margin-top: 1rem;
+}
+
+/* Main CSS */
+body {
+	font-size: var(--fs-regular);
+	background-color: var(--clr-neutral-100);
+	color: var(--clr-neutral-800);
+}
+
+h1 {
+	font-size: var(--fs-large);
+}
+
+button {
+	background-color: var(--clr-accent-400);
+	color: var(--clr-neutral-100);
+	padding: 0.5rem 1rem;
+	display: block;
+	width: auto;
+	border: none;
+	cursor: pointer;
+}
+
+button:hover {
+	background-color: var(--clr-accent-300);
+}
+
+form {
+	width: 75%;
+}
+
+.output {
+	width: 75%;
+	min-height: 10rem;
+	border: var(--clr-accent-400) 0.25rem solid;
+	margin-top: 1rem;
+}

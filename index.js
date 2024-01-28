@@ -13,7 +13,6 @@ form.addEventListener('submit', (event) => {
     chatOutput.textContent = chatInput;
 
     const apiKey = formData.get('password');
-    console.log(apiKey);
     form.reset(); // Clears form data so new entries can be made
 
 

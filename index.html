@@ -11,24 +11,23 @@
          name="keywords"
          content=""
          />
-      <title>Talk to me GPT</title>
+      <title>Chat GPT Clone</title>
       <link rel="stylesheet" type="text/css" href="style.css" />
       <script defer src="index.js"></script>        
    </head>
    <body>
-    <main class="center width-lg">
-                  <div class="output"></div>
-
-
-                  
-                  <form id="apiForm">
-                  <div id="chat-output" class="output"></div>
-                  
-                  <form id="apiForm" class="center width-lg">
-                     <input type="password" id="pass" name="password" required />
-                     <textarea name="chat-input" id="chat-input" cols="30" required placeholder="Type something"></textarea>
-                     <button type="submit">Send message</button>
-                  </form>
-                </main>
+      <main class="width-lg">
+         <h1 class="center-text padding-sm">Chat GPT Clone</h1>
+         <div class="wrapper center stack-sm flex-col">
+            <div id="chat-output" class="output center padding-sm">
+               <p>Your reply will appear here!</p>
+            </div>
+            <form id="apiForm" class="center width-lg flex-col gap-sm">
+               <input type="password" id="pass" name="password" required placeholder="Enter your API key here" class="padding-sm"/>
+               <textarea name="chat-input" id="chat-input" cols="30" rows="5" required placeholder="Enter your query here" class="padding-sm"></textarea>
+               <button type="submit" class="center">Send message</button>
+            </form>
+         </div>
+      </main>
    </body>
 </html>
