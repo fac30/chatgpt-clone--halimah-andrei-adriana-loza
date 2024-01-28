@@ -67,6 +67,10 @@ q:after {
 	margin-right: auto;
 }
 
+.center-text {
+	text-align: center;
+}
+
 .width-lg {
 	max-width: 60rem;
 }	
@@ -88,6 +92,10 @@ body {
 	font-size: var(--fs-regular);
 	background-color: var(--clr-neutral-100);
 	color: var(--clr-neutral-800);
+}
+
+h1 {
+	font-size: var(--fs-large);
 }
 
 button {
