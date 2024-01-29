@@ -39,5 +39,22 @@ form.addEventListener('submit', (event) => {
             outputParagraph.textContent = JSON.stringify(response.choices[0]?.message?.content);
             chatOutput.appendChild(outputParagraph);
 
+
+             // Split the message content into an array of lines
+             const lines = messageContent.split('\n');
+
+             // Clear existing content in the outputParagraph
+             outputParagraph.innerHTML = '';
+
+             // Iterate through the lines and append them to the outputParagraph with <br> tags
+             lines.forEach((line, index) => {
+             outputParagraph.innerHTML += line;
+        
+             // Add <br> tag after each line except the last one
+              if (index < lines.length - 1) {
+            outputParagraph.innerHTML += '<br>';
+        }
         });
+})
+
 })
